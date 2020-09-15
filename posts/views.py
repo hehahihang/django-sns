@@ -61,9 +61,15 @@ def post_like(request, post_id):
     else:
         post.like_user_set.add(request.user)
 
+    if request.GET.get('redirect_to') == 'mypage':
+        return render(request,'users/mypage.html')
+    else:
+        return redirect('home')
+
     return redirect('home')
 
 @login_required
 def like_list(request):
     likes = request.user.like_user_set.all()
     return render(request, 'posts/like_list.html', {'likes': likes})
+

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <h2>내가 팔로우한 사람</h2>
+                {% for list in followings %}
+                    <div class="card" style="width: 10rem; margin-top: 20px; text-align: center;">
+                        <div class="card-body">
+                            {{ list.user }}
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>  
+            </div>
+        </div>
+    </div> 
+{% endblock%}
