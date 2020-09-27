@@ -4,7 +4,8 @@
     <div class="container" style="text-align: center; margin-bottom: 30px;">
         <a href="{% url 'users:follower_list' %}" class="btn btn-primary" style="width: 200px;">팔로워 보기</a>
         <a href="{% url 'users:following_list' %}" class="btn btn-primary" style="width: 200px">팔로잉 보기</a>
-    </div> 
+    </div>
+    
     <div class="sns-container">
         <div class="row">
             <div class="col-8">
@@ -12,7 +13,6 @@
                     <div class="card mb-5 sns-card">
                         <div class="row pt-2 pr-2 pl-2 pb-2">
                             <div class="col">
-                                
                                 <span><h4>{{ post.user.username }}</h4></span>
                                 <span class="float-right">
                                     {% if user == post.user %}

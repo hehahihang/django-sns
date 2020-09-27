@@ -18,7 +18,8 @@ def follow_toggle(request, id):
 
 
 @login_required
-def profile_page(request):
+def profile_page(request, user_id):
+    #그 포스트를 작성자한 user를 가져와야한다.
     posts = Post.objects.filter(user=request.user).order_by("created_at")
     return render(request, 'users/mypage.html', {'posts': posts})
 
